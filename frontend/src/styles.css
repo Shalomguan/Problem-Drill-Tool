@@ -15,6 +15,12 @@
   color: var(--ink);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -383,27 +389,33 @@ button:focus-visible {
 
 @media (max-width: 720px) {
   .header-inner {
-    padding: 18px 16px 20px;
+    padding: 14px 16px 16px;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
   }
 
   .page-header h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .page-header p {
-    font-size: 14px;
+    display: none;
   }
 
   .page-nav {
     width: 100%;
     justify-content: space-between;
+    max-width: 100%;
+    padding: 4px;
+    box-shadow: 0 8px 18px rgba(24, 18, 12, 0.1);
+    overflow: hidden;
   }
 
   .page-nav a {
     flex: 1;
     text-align: center;
+    padding: 7px 12px;
   }
 
   .layout {
@@ -413,6 +425,16 @@ button:focus-visible {
 
   .practice-controls {
     align-items: stretch;
+    gap: 10px;
+  }
+
+  .practice-controls .filter-label {
+    width: 100%;
+  }
+
+  .practice-controls button {
+    width: 100%;
+    justify-content: center;
   }
 
   .question-header {
@@ -427,6 +449,7 @@ button:focus-visible {
 
   .nav-button {
     flex: 1;
+    padding: 8px 12px;
   }
 
   .index-pagination {
@@ -443,17 +466,19 @@ button:focus-visible {
 
 @media (max-width: 480px) {
   .header-inner {
-    padding: 16px 12px 18px;
+    padding: 12px 12px 14px;
   }
 
   .page-header h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .page-nav {
     flex-direction: column;
     gap: 6px;
-    padding: 8px;
+    padding: 6px;
+    border-radius: 14px;
+    box-shadow: 0 6px 14px rgba(24, 18, 12, 0.12);
   }
 
   .page-nav a {
@@ -475,6 +500,14 @@ button:focus-visible {
 
   .index-grid {
     grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+  }
+
+  .nav-button {
+    padding: 7px 10px;
+  }
+
+  .question-meta {
+    font-size: 13px;
   }
 }
 
